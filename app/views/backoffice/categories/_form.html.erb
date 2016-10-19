@@ -1,0 +1,28 @@
+<h1 class="page-header">Categorias</h1>
+<% if @category.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <ul>
+            <% @category.errors.full_messages.each do |message|%>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <%= @category.new_record? ? 'Criando' : 'Editando'%> Categoria
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+		<%= form_for([:backoffice, @category]) do |f| %>
+			<div class="col-lg-6">
+				<div class="form-group">
+					<%= f.text_field :description, class:'form-control', placeholder:'Ex: Animal' %>
+				</div>
+				<%= f.submit 'Salvar', class:'btn btn-default' %>
+			</div>
+		<% end %>
+	</div>
+<!-- /.panel-body -->
+</div>
