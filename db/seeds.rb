@@ -27,8 +27,10 @@ puts "Finalizado com sucesso"
 
 puts "Cadastrando o Admin padrão"
 
-	Admin.create!(email: 'admin@admin.com',
-								password: '123456',
-								password_confirmation: '123456' )
+	Admin.create!(
+		email: 'admin@admin.com',
+		name: 'Admin',
+		password: '123456',
+		password_confirmation: '123456' )
 
 puts "Finalizado com sucesso"

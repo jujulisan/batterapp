@@ -6,9 +6,11 @@ namespace :utils do
   	puts "Cadastrando o Admin padrão"
 
   	10.times do
-		Admin.create!(email: Faker::Internet.email,
-								password: '123456',
-								password_confirmation: '123456' )
+		Admin.create!(
+			email: Faker::Internet.email,
+			name: Faker::Name.name,
+			password: '123456',
+			password_confirmation: '123456' )
 	  end
 
 		puts "Finalizado com sucesso"
