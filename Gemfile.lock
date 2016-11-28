@@ -68,6 +68,7 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-i18n (1.1.0)
+    enum_help (0.0.16)
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.6.6)
@@ -102,6 +103,8 @@ GEM
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     pkg-config (1.1.7)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -196,10 +199,12 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n
+  enum_help
   faker
   foreman
   jbuilder (~> 2.0)
   jquery-rails
+  pundit
   rails (= 4.2.5)
   rails-assets-bootbox!
   rails-assets-bootstrap!

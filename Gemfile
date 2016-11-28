@@ -31,6 +31,10 @@ gem 'devise-i18n'
 
 gem 'bootstrap_sb_admin_base_v2'
 
+gem 'enum_help'
+
+gem 'pundit'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'

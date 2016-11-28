@@ -1,12 +1,15 @@
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: [:edit, :update, :destroy]
+  after_action :verify_authorized, only: [:new, :destroy]
+  after_action :verify_policy_scoped, only: :index
 
   def index
-  	@admins = Admin.all
+  	@admins = policy_scope(Admin)
   end
 
   def new
     @admin = Admin.new
+    authorize @admin
   end
 
   def create
@@ -40,6 +43,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def destroy
+    authorize @admin
     admin_email = @admin.email
     #for rails inside notice is necessary "", not ''.
     if @admin.destroy
@@ -52,7 +56,7 @@ class Backoffice::AdminsController < BackofficeController
   private
 
   def admin_params
-    params.require(:admin).permit(:email, :password, :password_confirmation, :name)
+    params.require(:admin).permit(policy(@admin).permitted_attributes)
   end
 
   def set_admin

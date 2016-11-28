@@ -50,6 +50,12 @@
       $.notify("<%= notice %>","success")
     </script>
   <% end %>
+
+  <% if alert %>
+    <script>
+      $.notify("<%= alert %>","error")
+    </script>
+  <% end %>
 </body>
 
 </html>
