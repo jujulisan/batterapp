@@ -26,16 +26,8 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-    # For just change email and don't be necessary type password
-    passwd = params[:admin][:password]
-    passwd_con = params[:admin][:password_confirmation]
-
-    if passwd.blank? && passwd_con.blank?
-      params[:admin].delete(:password)
-      params[:admin].delete(:password_confirmation)
-    end
-
     if @admin.update(admin_params)
+      AdminMailer.update_email(current_admin, @admin).deliver_now
       redirect_to backoffice_admins_path, notice: 'Administrador atualizado com sucesso'
     else
       render :edit
@@ -56,7 +48,20 @@ class Backoffice::AdminsController < BackofficeController
   private
 
   def admin_params
-    params.require(:admin).permit(policy(@admin).permitted_attributes)
+    if password_blank?
+      params[:admin].except!(:password, :password_confirmation)
+    end
+
+    if @admin.blank?
+      params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
+    else
+      params.require(:admin).permit(policy(@admin).permitted_attributes)
+    end
+  end
+
+  def password_blank?
+    params[:admin][:password].blank? &&
+    params[:admin][:password_confirmation].blank?
   end
 
   def set_admin

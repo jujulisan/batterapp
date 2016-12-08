@@ -69,5 +69,7 @@ group :development do
   gem 'better_errors'
 
   gem 'rails-erd'
+
+  gem 'mailcatcher'
 end
 
