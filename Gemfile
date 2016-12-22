@@ -71,5 +71,7 @@ group :development do
   gem 'rails-erd'
 
   gem 'mailcatcher'
+
+  gem 'lerolero_generator'
 end
 
