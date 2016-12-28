@@ -35,6 +35,8 @@ gem 'enum_help'
 
 gem 'pundit'
 
+gem 'money-rails'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
