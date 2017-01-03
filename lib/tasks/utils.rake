@@ -21,7 +21,7 @@ namespace :utils do
   desc "Cria administradores Fake"
   task generate_admins: :environment do
 
-  	puts "Cadastrando o Admin padrão"
+  	puts "Cadastrando o Admins"
 
   	10.times do
 		Admin.create!(
