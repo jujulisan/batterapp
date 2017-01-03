@@ -29,7 +29,8 @@ namespace :utils do
         description: LeroleroGenerator.paragraph([1,2,3].sample),
         member: Member.all.sample,
         category: Category.all.sample,
-        price: "#{Random.rand(500)},#{Random.rand(99)}"
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
+        picture: File.new(Rails.root.join('public', 'image-for-ads', "#{Random.rand(7)}.jpg"), 'r')
       )
     end
 

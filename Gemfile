@@ -37,6 +37,8 @@ gem 'pundit'
 
 gem 'money-rails'
 
+gem 'paperclip', '~> 5.0.0'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
