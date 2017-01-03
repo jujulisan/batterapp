@@ -17,6 +17,23 @@ namespace :utils do
 		puts "Finalizado com sucesso"
 
   end
+
+  #################################################################
+  desc "Cria membros Fake"
+  task generate_members: :environment do
+
+    puts "Cadastrando o Admin padrão"
+
+    100.times do
+    Member.create!(
+      email: Faker::Internet.email,
+      password: '123456',
+      password_confirmation: '123456')
+    end
+
+    puts "Finalizado com sucesso"
+
+  end
   #################################################################
 
   desc "Cria Anúncios Fake"
