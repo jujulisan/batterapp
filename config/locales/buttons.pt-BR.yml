@@ -1,4 +1,3 @@
-
 'pt-BR':
   buttons:
     new: Novo
@@ -8,5 +7,7 @@
     destroy: Apagar
     back: Voltar
     home: Início
-    send_message: Enviar messagem
     close: Fechar
+    send: Enviar
+    send_message: Enviar Mensagem
+    search: Pesquisar

@@ -37,6 +37,9 @@
                 <li>
                     <%= link_to "Meus Anúncios", site_profile_ads_path %>
                 </li>
+                <li>
+                    <%= link_to "Novo Anúncio", new_site_profile_ad_path %>
+                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -52,6 +55,11 @@
             </div>
         </div>
     </div>
+  <% if notice %>
+    <script>
+      $.notify("<%= notice %>","success")
+    </script>
+  <% end %>
   <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
