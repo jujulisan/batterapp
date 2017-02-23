@@ -2,7 +2,8 @@ class Ad < ActiveRecord::Base
   belongs_to :category
   belongs_to :member
 
-  scope :last_six, -> { limit(6).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 6) { limit(quantity).order(created_at: :desc) }
+  scope :to_the, ->(member) {where(member: member)}
 
   monetize :price_cents
 
