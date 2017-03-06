@@ -39,13 +39,17 @@ gem 'money-rails'
 
 gem 'paperclip', '~> 5.0.0'
 
+gem 'jquery-ui-rails'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
 
-	gem 'rails-assets-notifyjs'
+	gem 'rails-assets-bootstrap.growl'
 
 	gem 'rails-assets-bootbox'
+
+  gem 'rails-assets-animate-css'
 
 end
 # Use ActiveModel has_secure_password

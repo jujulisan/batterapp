@@ -1,3 +1,7 @@
+<%= content_for :javascripts do %>
+	<%= javascript_include_tag 'site/profile/ads'%>
+<% end %>
+
 <%= form_for([:site, :profile, @ad], html: {multipart: true }) do |f| %>
 	<% if @ad.errors.any? %>
 	    <div class="alert alert-danger alert-dismissable">
@@ -40,7 +44,7 @@
 		<div class="col-md-3">
 			<div class="form-group">
 		    <%= f.label :finish_date %>
-		    <%= f.date_field :finish_date, class:'form-control' %>
+		    <%= f.text_field :finish_date, class:'form-control datepicker', value: (l(@ad.finish_date) unless @ad.finish_date.blank?) %>
 		  </div>
 		</div>
 	</div>
