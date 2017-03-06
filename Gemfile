@@ -41,6 +41,8 @@ gem 'paperclip', '~> 5.0.0'
 
 gem 'jquery-ui-rails'
 
+gem 'redcarpet'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
@@ -68,6 +70,8 @@ end
 
 group :development do
 	gem 'faker'
+
+  gem 'doctor_ipsum'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

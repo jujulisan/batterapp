@@ -7,7 +7,7 @@
                 <h4>
                 <%= link_to ad.title.truncate(20), site_ad_detail_path(ad), remote: true %>
                 </h4>
-                <p><%= ad.description.truncate(100) %></p>
+                <p><%= ad.description_short.truncate(100) if ad.description_short.present? %></p>
             </div>
             <div class="ratings">
                 <p class="pull-right">15 reviews</p>
