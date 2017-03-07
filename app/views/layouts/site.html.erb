@@ -19,7 +19,19 @@
 <body>
   <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
   <%= render partial: 'layouts/site_shared/navigation' %>
-  <%= yield %>
+
+  <div class="container">
+      <div class="row">
+          <%= render 'layouts/site_shared/sidebar' %>
+          <div id="home-detail" class="col-md-9">
+              <%= render 'layouts/site_shared/carousel' if controller_path == 'site/home' %>
+              <div class="row">
+                  <%= yield %>
+              </div>
+          </div>
+      </div>
+  </div>
+
   <%= render partial: 'layouts/site_shared/footer' %>
 
   <%= javascript_include_tag 'application' %>
