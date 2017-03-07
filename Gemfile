@@ -43,6 +43,8 @@ gem 'jquery-ui-rails'
 
 gem 'redcarpet'
 
+gem 'friendly_id'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
@@ -53,6 +55,9 @@ source 'https://rails-assets.org' do
 
   gem 'rails-assets-animate-css'
 
+  gem 'rails-assets-bootstrap-markdown'
+
+  gem 'rails-assets-marked'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

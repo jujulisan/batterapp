@@ -2,7 +2,7 @@ class Ad < ActiveRecord::Base
 
   before_save :md_to_html
 
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   belongs_to :member
 
   validates :title, :description_md, :description_short, :category, :picture, :finish_date, presence: true
@@ -10,6 +10,7 @@ class Ad < ActiveRecord::Base
 
   scope :descending_order, ->(quantity = 6) { limit(quantity).order(created_at: :desc) }
   scope :to_the, ->(member) {where(member: member)}
+  scope :by_category, ->(id) {where(category: id)}
 
   monetize :price_cents
 

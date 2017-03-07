@@ -1,16 +1,14 @@
-<!-- Page Content -->
 <div class="container">
     <div class="row">
         <%= render 'site/shared/sidebar' %>
         <div id="home-detail" class="col-md-9">
-            <%= render 'site/shared/carousel' %>
             <div class="row">
+            		<div class="panel panel-default">
+	            			<div class="panel-body">
+	            					<h4><%= @category.description %></h4>
+	          				</div>
+            		</div>
                 <%= render 'site/shared/ads' %>
             </div>
         </div>
     </div>
-</div>
-
-<!-- /.container -->
-
-
