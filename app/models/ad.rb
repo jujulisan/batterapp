@@ -11,6 +11,7 @@ class Ad < ActiveRecord::Base
   scope :descending_order, ->(quantity = 6) { limit(quantity).order(created_at: :desc) }
   scope :to_the, ->(member) {where(member: member)}
   scope :by_category, ->(id) {where(category: id)}
+  scope :search, ->(term, page) {where("lower(title) LIKE ? ", "%#{term.downcase}%").page(page).per(9)}
 
   monetize :price_cents
 
