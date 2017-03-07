@@ -45,6 +45,8 @@ gem 'redcarpet'
 
 gem 'friendly_id'
 
+gem 'wiselinks'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
