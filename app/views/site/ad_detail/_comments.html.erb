@@ -9,7 +9,9 @@
         <%= comment.member.email %>
         <span class="pull-right"><%= l comment.created_at, format: :short %></span>
         <p><%= comment.body %></p>
-        <%= rating_for_user @ad, current_member, 'quality' if current_member.id == comment.member.id %>
+        <% if (current_member) &&(current_member == comment.member) %>
+            <%= rating_for_user @ad, current_member, 'quality' %>
+        <% end %>
     </div>
 </div>
 <hr>

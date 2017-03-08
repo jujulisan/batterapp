@@ -10,13 +10,8 @@
                 <p><%= ad.description_short.truncate(100) if ad.description_short.present? %></p>
             </div>
             <div class="ratings">
-                <p class="pull-right">15 reviews</p>
                 <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
+                    <%= rating_for ad, 'quality' %>
                 </p>
             </div>
         </div>
