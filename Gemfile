@@ -51,6 +51,8 @@ gem 'kaminari'
 
 gem 'kaminari-i18n'
 
+gem 'ratyrate'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
