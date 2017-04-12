@@ -53,6 +53,8 @@ gem 'kaminari-i18n'
 
 gem 'ratyrate'
 
+gem 'json', github: 'flori/json', branch: 'v1.8'
+
 source 'https://rails-assets.org' do
 
 	gem 'rails-assets-bootstrap'
