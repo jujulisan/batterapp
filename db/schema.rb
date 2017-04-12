@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308173743) do
+ActiveRecord::Schema.define(version: 20170119230220) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 20170308173743) do
   create_table "ads", force: :cascade do |t|
     t.string   "title",                limit: 255
     t.text     "description"
-    t.integer  "category_id"
     t.integer  "member_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "price_cents"
+    t.integer  "category_id"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.integer  "price_cents",                      default: 0
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
@@ -121,6 +121,17 @@ ActiveRecord::Schema.define(version: 20170308173743) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "profile_members", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "second_name"
+    t.date     "birthdate"
+    t.integer  "member_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "profile_members", ["member_id"], name: "index_profile_members_on_member_id"
 
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"

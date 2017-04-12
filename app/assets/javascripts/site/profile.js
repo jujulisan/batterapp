@@ -1,8 +1,12 @@
-//= require jquery-ui/datepicker
-//= require jquery-ui/datepicker-pt-BR
+//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/i18n/datepicker-pt-BR
 //= require bootstrap-markdown
 //= require marked
 
+/**
+ * Brazilian Portuguese translation for bootstrap-markdown
+ * Gabriel Anderson <gcacars@>
+ */
 (function ($) {
   $.fn.markdown.messages.ptBR = {
     'Bold': "Negrito",
@@ -29,5 +33,6 @@
     'Code': "Código",
     'code text here': "Escreva o código aqui"
   };
-  $("#ad_description_md").markdown({language:'ptBR'})
+
+  $("#ad_description_md").markdown({language:'ptBR'});
 }(jQuery));

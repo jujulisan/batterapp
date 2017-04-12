@@ -1,5 +1,5 @@
 class Backoffice::DiagramsController < BackofficeController
   def index
-    %x(erd --filename='public/diagram')
+    %x(bundle exec erd --filename='public/diagram')
   end
 end

@@ -3,7 +3,7 @@
 //= require jquery.raty
 //= require ratyrate
 
-/*Wiselinks*/
+/** Wiselinks Gem **/
 $(function(){
-	window.wiselinks = new Wiselinks($('#home-detail'));
+  window.wiselinks = new Wiselinks($('#home-detail'));
 });

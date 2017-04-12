@@ -5,17 +5,21 @@
             <div class="caption" style="height: 100px;">
                 <h4 class="pull-right"><%= humanized_money_with_symbol ad.price %></h4>
                 <h4>
-                <%= link_to ad.title.truncate(20), site_ad_detail_path(ad), remote: true, data: { push: :partial } %>
+                    <%= link_to truncate(ad.title, length: 20), site_ad_detail_path(ad), remote: true, data: { push: :partial} %>
                 </h4>
-                <p><%= ad.description_short.truncate(100) if ad.description_short.present? %></p>
+                <p><%= truncate(ad.description_short, length: 100) %></p>
             </div>
-            <div class="ratings">
-                <p>
-                    <%= rating_for ad, 'quality' %>
-                </p>
+            <div class="ratings" style="padding: 5px;">
+                <p class="pull-right"><%= ad.rates('quality').count %> <%= t('labels.reviews') %></p>
+                <%= rating_for ad, 'quality' %>
             </div>
         </div>
     </div>
 <% end %>
 
+<div class="row">
+    <div class="text-center">
+        <%= paginate @ads %>
+    </div>
+</div>
 

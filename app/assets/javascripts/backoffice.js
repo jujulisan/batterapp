@@ -1,6 +1,7 @@
 //= require bootstrap_sb_admin_base_v2
 //= require bootbox
 
+
 /* Sobrescreve  data-confirm do Rails */
 
 $.rails.allowAction = function(element) {

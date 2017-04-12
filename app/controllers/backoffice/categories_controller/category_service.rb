@@ -1,14 +1,13 @@
 class Backoffice::CategoriesController::CategoryService
+  attr_accessor :category
 
-	attr_accessor :category
+  def self.create(params_category)
+    @category = Category.new(params_category)
 
-	def self.create(params_category)
-		@category = Category.new(params_category)
+    if @category.valid?
+      @category.save!
+    end
 
-		if @category.valid?
-			@category.save!
-		end
-
-		@category
-	end
+    @category
+  end
 end

@@ -1,14 +1,24 @@
-# BatterApp
+# Ruby on Rails - Curso Completo - Módulo 3
 
-##Application developed in Ruby 2.3.1 with Rails 4.2.5
+Aqui ficará o código fonte do aplicativo "Escambo APP" desenvolvido no módulo 3 do curso de Ruby on Rails Completo da Udemy.
 
-###Sale of used products. (This application was developed with Udemy class, teacher Jackson Pires)
+Deseja adquirir o curso? Acesse o link abaixo e saiba como.
 
-##Dependencies:
+>> [Ruby on Rails - Curso Completo](http://jacksonpires.blogspot.com.br/2016/05/novo-curso-de-rails-na-udemy.html)
+
+
+## Dependências do projeto
 
 * ImageMagick (https://www.imagemagick.org)
 
 ```
 sudo apt-get update
 sudo apt-get install imagemagick
+```
+
+* Graphviz (https://www.graphviz.org) - Apenas para Ambiente de Desenvolvimento
+
+```
+sudo apt-get update
+sudo apt-get install graphviz
 ```
